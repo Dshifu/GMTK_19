@@ -11,7 +11,6 @@ public class PrefsName : MonoBehaviour
     public const string MediumPanicVolume = "MediumPanicVolume";
     public const string HighPanicVolume = "HighPanicVolume";
     public const string MasterVolume = "MasterVolume";
-    public const string HeartRate = "HeartRate";
 
 
     public class AnimatorState
@@ -25,6 +24,7 @@ public class PrefsName : MonoBehaviour
         public const string IsNeedToPlayParticle = "IsNeedToPlayParticle";
         public const string MoveRight = "MoveRight";
         public const string MoveLeft = "MoveLeft";
+        public const string HeartRate = "HeartRate";
 
     }
 }
