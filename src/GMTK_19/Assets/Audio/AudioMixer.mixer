@@ -20,6 +20,8 @@ AudioMixerController:
     name: HighPanicVolume
   - guid: 27efcb1008a2ef0458ccdbc9be4256d1
     name: LowPanicVolume
+  - guid: 72fe9382a2e76f84ba363ea3ddb7c26f
+    name: MasterVolume
   - guid: e7aa4380a146f2a4d95b03bc27bbcf70
     name: MediumPanicVolume
   m_AudioMixerGroupViews:
@@ -76,8 +78,9 @@ AudioMixerSnapshotController:
   m_AudioMixer: {fileID: 24100000}
   m_SnapshotID: 6959b97a669968d499b9e112e838c79a
   m_FloatValues:
-    27efcb1008a2ef0458ccdbc9be4256d1: 0.2
+    27efcb1008a2ef0458ccdbc9be4256d1: -0.30163807
     e7aa4380a146f2a4d95b03bc27bbcf70: 0
+    72fe9382a2e76f84ba363ea3ddb7c26f: 0.10800299
     81ac48c2fdf2cb149a91a4cdad746af9: 1
     8c40ae466a46d584498177057d9451e9: 0
     48b0e8c6d8ca790418b9a0c703cad1d3: 0
