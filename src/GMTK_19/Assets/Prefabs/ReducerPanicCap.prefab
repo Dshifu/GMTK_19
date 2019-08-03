@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1069819384049894496}
-  - component: {fileID: 748727673244527733}
+  - component: {fileID: 3916608889744821045}
   m_Layer: 0
   m_Name: ColliderThatCollides
   m_TagString: Untagged
@@ -36,8 +36,8 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!58 &748727673244527733
-CircleCollider2D:
+--- !u!60 &3916608889744821045
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -50,8 +50,24 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.1, y: 1.05}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.45000002, y: 0.52500004}
+      - {x: -0.55, y: 0.32500002}
+      - {x: -0.55, y: -0.475}
+      - {x: -0.5, y: -0.52500004}
+      - {x: 0.5, y: -0.52500004}
+      - {x: 0.55, y: -0.475}
+      - {x: 0.55, y: 0.52500004}
 --- !u!1 &6233562210462625080
 GameObject:
   m_ObjectHideFlags: 0
@@ -66,7 +82,7 @@ GameObject:
   - component: {fileID: 6116643727723721621}
   - component: {fileID: 1201662778}
   m_Layer: 0
-  m_Name: EnvironmentReducerCap
+  m_Name: ReducerPanicCap
   m_TagString: ReducerPanic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +184,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 4fbd01c6a73c73145801e6aaab0ab689, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 02e8925ef5f69524fa90cb340dd8bb0a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

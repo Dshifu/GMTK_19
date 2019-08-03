@@ -105,8 +105,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textureWithoutStroke: {fileID: 0}
-  reducer: 0.005
-  timeForFullPanic: 30
+  reducer: 0
+  timeForFullPanic: 15
 --- !u!58 &9093995927580192083
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -160,7 +160,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 92c03c43b59d90a4c9b9a5d883b4ac23, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0e8a68716fff00445a4dc22d9a5b1d4b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -178,11 +178,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 476879879444729488}
     m_Modifications:
-    - target: {fileID: 2629295450359173072, guid: 42e3565a48c66d649adea78ac26478e7,
-        type: 3}
-      propertyPath: m_Name
-      value: Shine
-      objectReference: {fileID: 0}
     - target: {fileID: 2629295450359173073, guid: 42e3565a48c66d649adea78ac26478e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -237,6 +232,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629295450359173072, guid: 42e3565a48c66d649adea78ac26478e7,
+        type: 3}
+      propertyPath: m_Name
+      value: Shine
       objectReference: {fileID: 0}
     - target: {fileID: 2629295450359173087, guid: 42e3565a48c66d649adea78ac26478e7,
         type: 3}

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 7668406662270170004}
   - component: {fileID: 7668406662270170003}
   - component: {fileID: 7668406662270170002}
+  - component: {fileID: 4813749740463766712}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -49,7 +50,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7394705968425248587}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -198,6 +199,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0051b241a9e393840a18f86334259b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!60 &4813749740463766712
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7394705968425248587}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.4666667, y: 2.7}
+    newSize: {x: 0.44, y: 0.81}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.73333335, y: -0.28333336}
+      - {x: 0.73333335, y: 0.65000004}
+      - {x: 0.43333337, y: 1.0166668}
+      - {x: 0.3, y: 1.35}
+      - {x: -0.26666668, y: 1.35}
+      - {x: -0.36666667, y: 1.2166667}
+      - {x: -0.73333335, y: 0.5833334}
+      - {x: -0.73333335, y: -0.25}
+      - {x: -0.4666667, y: -0.3166667}
+      - {x: -0.36666667, y: -0.85}
+      - {x: -0.4666667, y: -1.35}
+      - {x: 0.43333337, y: -1.35}
+      - {x: 0.4666667, y: -0.8166667}
+      - {x: 0.5, y: -0.21666668}
 --- !u!1001 &2492950619034681432
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -280,10 +320,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7394705968425248591}
     m_Modifications:
-    - target: {fileID: 159448, guid: b5699fa9edf2e1640b11045ae323aeff, type: 3}
-      propertyPath: m_Name
-      value: FireShit
-      objectReference: {fileID: 0}
     - target: {fileID: 443180, guid: b5699fa9edf2e1640b11045ae323aeff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -328,6 +364,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 89.99999
       objectReference: {fileID: 0}
+    - target: {fileID: 159448, guid: b5699fa9edf2e1640b11045ae323aeff, type: 3}
+      propertyPath: m_Name
+      value: FireShit
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5699fa9edf2e1640b11045ae323aeff, type: 3}
 --- !u!4 &7668406660247892768 stripped
@@ -343,11 +383,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7394705968425248591}
     m_Modifications:
-    - target: {fileID: 8159481182196394491, guid: beb8989ab59880440a09017f386c9d7a,
-        type: 3}
-      propertyPath: m_Name
-      value: Shampoo
-      objectReference: {fileID: 0}
     - target: {fileID: 8159481182196225529, guid: beb8989ab59880440a09017f386c9d7a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -403,6 +438,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8159481182196394491, guid: beb8989ab59880440a09017f386c9d7a,
+        type: 3}
+      propertyPath: m_Name
+      value: Shampoo
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: beb8989ab59880440a09017f386c9d7a, type: 3}
 --- !u!4 &1970302697401546372 stripped
@@ -418,11 +458,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7394705968425248591}
     m_Modifications:
-    - target: {fileID: 8159481182196394491, guid: 0c89f986c464f1a428a1c7226b80e65c,
-        type: 3}
-      propertyPath: m_Name
-      value: Pepsi
-      objectReference: {fileID: 0}
     - target: {fileID: 8159481182196225529, guid: 0c89f986c464f1a428a1c7226b80e65c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -478,6 +513,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8159481182196394491, guid: 0c89f986c464f1a428a1c7226b80e65c,
+        type: 3}
+      propertyPath: m_Name
+      value: Pepsi
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c89f986c464f1a428a1c7226b80e65c, type: 3}
 --- !u!4 &1970302697833183500 stripped
@@ -493,11 +533,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7394705968425248591}
     m_Modifications:
-    - target: {fileID: 3365887642031456554, guid: 86a46698c3cacc849a23ad691d462e2d,
-        type: 3}
-      propertyPath: m_Name
-      value: Goroh
-      objectReference: {fileID: 0}
     - target: {fileID: 3365887642031634092, guid: 86a46698c3cacc849a23ad691d462e2d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -552,6 +587,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365887642031456554, guid: 86a46698c3cacc849a23ad691d462e2d,
+        type: 3}
+      propertyPath: m_Name
+      value: Goroh
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 86a46698c3cacc849a23ad691d462e2d, type: 3}

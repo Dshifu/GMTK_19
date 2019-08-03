@@ -51,7 +51,7 @@ public class MovementBonusEffectController : MonoBehaviour
         switch (movementBonusSettings.movementBonusType)
         {
             case CharacterMovementController.MovementBonusSettings.MovementBonusType.AK:
-            case CharacterMovementController.MovementBonusSettings.MovementBonusType.Goroh:
+            case CharacterMovementController.MovementBonusSettings.MovementBonusType.Beans:
             case CharacterMovementController.MovementBonusSettings.MovementBonusType.FireShit:
                 characterMovementController.speedBonusMultiply = movementBonusSettings.straightSpeedMultiplier;
                 movementBonusSettings.effectiveTime -= Time.deltaTime;

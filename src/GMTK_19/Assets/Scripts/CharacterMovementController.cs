@@ -76,7 +76,7 @@ public class CharacterMovementController : MonoBehaviour
         public enum MovementBonusType
         {
             AK,
-            Goroh,
+            Beans,
             Coka,
             FireShit,
             Shampoo

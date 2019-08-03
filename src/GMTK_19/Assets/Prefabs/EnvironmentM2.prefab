@@ -1,101 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3558819301722730937
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8420907823360000653}
-  - component: {fileID: 7422766312960356352}
-  m_Layer: 0
-  m_Name: ColliderThatCollides
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &8420907823360000653
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3558819301722730937}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 476879879444729488}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1, y: 1}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!60 &7422766312960356352
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3558819301722730937}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.65, y: 5}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 1.525, y: 1.4}
-      - {x: 1.1750001, y: 1.65}
-      - {x: 1.125, y: 2.2}
-      - {x: 0.77500004, y: 2.4}
-      - {x: 0.175, y: 2.5}
-      - {x: -1.275, y: 2.5}
-      - {x: -1.375, y: 2.3500001}
-      - {x: -1.375, y: 2.15}
-      - {x: -1.475, y: 1.85}
-      - {x: -1.6750001, y: 2.25}
-      - {x: -1.825, y: 2.25}
-      - {x: -2.4750001, y: 1.5}
-      - {x: -3.125, y: 1}
-      - {x: -3.175, y: 0.90000004}
-      - {x: -3.125, y: 0.75}
-      - {x: -2.875, y: 0.75}
-      - {x: -3.125, y: 0.75}
-      - {x: -3.325, y: 0.65000004}
-      - {x: -3.325, y: -0.1}
-      - {x: -1.275, y: -2}
-      - {x: -1.4250001, y: -2.2}
-      - {x: -0.925, y: -2.4}
-      - {x: -0.475, y: -2.3500001}
-      - {x: 0.825, y: -2.5}
-      - {x: 3.325, y: -2.5}
-      - {x: 3.325, y: -1.15}
-      - {x: 3.275, y: -0.5}
-    - - {x: -0.375, y: -0.2}
-      - {x: -0.375, y: 0.25}
-      - {x: -0.075, y: 0.55}
-      - {x: 0.22500001, y: 0.15}
-    - - {x: -2.075, y: 1.2}
-      - {x: -2.075, y: 1.3000001}
-      - {x: -2.275, y: 1.0500001}
-      - {x: -2.2250001, y: 1.0500001}
 --- !u!1 &5947730976337036281
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,12 +9,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 476879879444729488}
-  - component: {fileID: 1918824549573009418}
-  - component: {fileID: 9093995927580192083}
   - component: {fileID: 8224674952832335338}
+  - component: {fileID: 2900967364083270377}
   m_Layer: 0
-  m_Name: VelocityPanicHouse
-  m_TagString: VelocityPanic
+  m_Name: EnvironmentM2
+  m_TagString: Environment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +29,6 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8420907823360000653}
   - {fileID: 3075699606829040647}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -136,37 +38,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1918824549573009418
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5947730976337036281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e70d27f0551c425409fbfd9739fccb6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  textureWithoutStroke: {fileID: 0}
-  reducer: 0
-  timeForFullPanic: 60
---- !u!58 &9093995927580192083
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5947730976337036281}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 8
 --- !u!212 &8224674952832335338
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -204,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b969f974f8f0dd54c9ef089a03824d46, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 656de9d84a4666548a60aa4e20145a11, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -215,6 +86,37 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &2900967364083270377
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5947730976337036281}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.05, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.175, y: 0.5}
+      - {x: -0.52500004, y: 0.25}
+      - {x: -0.52500004, y: -0.5}
+      - {x: 0.425, y: -0.5}
+      - {x: 0.52500004, y: -0.4}
+      - {x: 0.52500004, y: 0.5}
 --- !u!1001 &1067975672379411414
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -260,7 +162,7 @@ PrefabInstance:
     - target: {fileID: 2629295450359173073, guid: 42e3565a48c66d649adea78ac26478e7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2629295450359173073, guid: 42e3565a48c66d649adea78ac26478e7,
         type: 3}

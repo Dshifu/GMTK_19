@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5167828239209489613}
   - component: {fileID: 6198045148598281202}
   m_Layer: 0
-  m_Name: MovementBonusFireshit
+  m_Name: MovementBonusAK
   m_TagString: MovementBonus
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 87edd1bc0931c85428f6567f38813273, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a7c6bf828fc28141a7ad752214de4d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -125,10 +125,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementBonusSettings:
-    straightSpeedMultiplier: 3
+    straightSpeedMultiplier: 4
     delayBeforeActivation: 0
-    effectiveTime: 4
-    movementBonusType: 3
+    effectiveTime: 3
+    movementBonusType: 0
 --- !u!1 &906064875403200940
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +138,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6345590671383949531}
-  - component: {fileID: 290937380780087342}
+  - component: {fileID: 4653786364284320037}
   m_Layer: 0
   m_Name: ColliderThatCollides
   m_TagString: Untagged
@@ -165,7 +165,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!60 &290937380780087342
+--- !u!60 &4653786364284320037
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -182,7 +182,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.5, y: 1.35}
+    oldSize: {x: 0.5, y: 1.45}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -190,7 +190,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.25, y: 0.675}
-      - {x: -0.25, y: -0.675}
-      - {x: 0.25, y: -0.675}
-      - {x: 0.25, y: 0.675}
+    - - {x: -0.1, y: 0.725}
+      - {x: -0.25, y: 0.575}
+      - {x: -0.25, y: -0.425}
+      - {x: 0, y: -0.725}
+      - {x: 0.25, y: -0.725}
+      - {x: 0.25, y: 0.725}
