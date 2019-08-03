@@ -4,28 +4,28 @@ using Vector3 = UnityEngine.Vector3;
 public class CameraFollow : MonoBehaviour
 {
     public Transform followTarget;
-    [SerializeField] float cameraMoveSpeed;
+    [SerializeField] private float cameraMoveSpeed = 1f;
 
 
-    void FixedUpdate()
+    private void FixedUpdate()
     {
         var cameraFollowPosition = followTarget.position;
-        cameraFollowPosition.z = transform.position.z;
+        var position = transform.position;
+        cameraFollowPosition.z = position.z;
 
-        var cameraMoveDir = (cameraFollowPosition - transform.position).normalized;
-        var distance = Vector3.Distance(cameraFollowPosition, transform.position);
+        var cameraMoveDir = (cameraFollowPosition - position).normalized;
+        var distance = Vector3.Distance(cameraFollowPosition, position);
 
-        if (distance > 0)
+        if (!(distance > 0)) return;
+        
+        var newCameraPosition = transform.position + distance * cameraMoveSpeed * Time.deltaTime * cameraMoveDir;
+
+        var distanceAfterMoving = Vector3.Distance(newCameraPosition, cameraFollowPosition);
+        if (distanceAfterMoving > distance)
         {
-            var newCameraPosition = transform.position + cameraMoveDir * distance * cameraMoveSpeed * Time.deltaTime;
-
-            var distanceAfterMoving = Vector3.Distance(newCameraPosition, cameraFollowPosition);
-            if (distanceAfterMoving > distance)
-            {
-                newCameraPosition = transform.position;
-            }
-
-            transform.position = newCameraPosition;
+            newCameraPosition = transform.position;
         }
+
+        transform.position = newCameraPosition;
     }
 }

@@ -7,7 +7,7 @@ public class PanicEnvironmentEffectController : MonoBehaviour
 {
     [Required] [SerializeField] private PanicLevel panicLevel = null;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.transform.CompareTag(PrefsName.ReducerPanic))
         {
@@ -20,9 +20,9 @@ public class PanicEnvironmentEffectController : MonoBehaviour
             panicLevel.SetTimeForFullPanic(other.GetComponent<PanicEnvironmentEffect>().timeForFullPanic);
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D(Collider2D other)
     {
         if (other.transform.CompareTag(PrefsName.VelocityPanic))
-            panicLevel.ResetTimeForFullPanic();
+            panicLevel.ResetTimeForFullPanic(other.GetComponent<PanicEnvironmentEffect>().timeForFullPanic);
     }
 }
