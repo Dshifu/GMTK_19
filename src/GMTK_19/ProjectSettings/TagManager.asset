@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ReducerPanic
   - VelocityPanic
+  - MovementBonus
   layers:
   - Default
   - TransparentFX
