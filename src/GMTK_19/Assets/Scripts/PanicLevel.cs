@@ -36,13 +36,20 @@ public class PanicLevel : MonoBehaviour
         panicLevelTransform.localScale = localScale;
     }
 
-    public void SetTimeForFullPanic(float additionalTimeForFullPanic)
+    public void AddTimeForFullPanic(float additionalTimeForFullPanic)
     {
         timeForFullPanic += additionalTimeForFullPanic;
     }
 
-    public void ResetTimeForFullPanic(float additionalTimeForFullPanic)
+    public void RemoveTimeForFullPanic(float additionalTimeForFullPanic)
     {
         timeForFullPanic -= additionalTimeForFullPanic;
     }
+
+    /// <summary>
+    /// Panic level from 0 to 1
+    /// </summary>
+    /// <returns></returns>
+    public float GetPanicLevel
+        => panicLevelTransform.localScale.x;
 }

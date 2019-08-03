@@ -17,12 +17,12 @@ public class PanicEnvironmentEffectController : MonoBehaviour
         }
 
         if (other.transform.CompareTag(PrefsName.VelocityPanic))
-            panicLevel.SetTimeForFullPanic(other.GetComponent<PanicEnvironmentEffect>().timeForFullPanic);
+            panicLevel.AddTimeForFullPanic(other.GetComponent<PanicEnvironmentEffect>().timeForFullPanic);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.transform.CompareTag(PrefsName.VelocityPanic))
-            panicLevel.ResetTimeForFullPanic(other.GetComponent<PanicEnvironmentEffect>().timeForFullPanic);
+            panicLevel.RemoveTimeForFullPanic(other.GetComponent<PanicEnvironmentEffect>().timeForFullPanic);
     }
 }
