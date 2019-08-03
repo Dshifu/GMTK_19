@@ -5,9 +5,9 @@ using UnityEngine.Audio;
 public class AudioMixerController : MonoBehaviour
 {
     [Required]
-    [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private AudioMixer audioMixer = null;
     [Required]
-    [SerializeField] private PanicLevel panicLevel;
+    [SerializeField] private PanicLevel panicLevel = null;
 
     private const float HighVolumeLimit = 0f;
     private const float LowVolumeLimit = -80f;
