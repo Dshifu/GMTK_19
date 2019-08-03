@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PrefsName : MonoBehaviour
 {
-    public static string ReducerPanic = "ReducerPanic";
-    public static string VelocityPanic = "VelocityPanic";
+    public const string ReducerPanic = "ReducerPanic";
+    public const string VelocityPanic = "VelocityPanic";
+    public const string MoveTrigger = "Move";
 }
