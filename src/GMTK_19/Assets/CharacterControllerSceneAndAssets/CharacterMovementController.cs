@@ -2,9 +2,9 @@
 
 public class CharacterMovementController : MonoBehaviour
 {
+    public int characterVerticalSpeedMultiplier = 500;
+    public int characterRotationSpeedMultiplier = 1500;
     public Rigidbody2D rigidbodyComponent;
-    public int characterVerticalSpeedMultiplier = 5;
-    public int characterRotationSpeedMultiplier = 100;
 
     private void Awake()
     {
