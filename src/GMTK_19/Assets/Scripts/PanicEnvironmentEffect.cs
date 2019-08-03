@@ -23,5 +23,6 @@ public class PanicEnvironmentEffect : MonoBehaviour
     {
         var myImage = GetComponent<Image>();
         myImage.sprite = textureWithoutStroke;
+        reducer = 0f;
     }
 }
