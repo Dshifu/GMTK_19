@@ -46,15 +46,15 @@ public class CharacterMovementController : MonoBehaviour
         public enum MovementBonusType
         {
             AK,
-            BEANS,
-            COKE,
-            FIRESHIT,
-            SHAMPOO
+            Goroh,
+            Coka,
+            FireShit,
+            Shampoo
         }
 
         private bool IsNotShampoo()
         {
-            return movementBonusType != MovementBonusType.SHAMPOO;
+            return movementBonusType != MovementBonusType.Shampoo;
         }
     }
 }
