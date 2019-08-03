@@ -65,7 +65,7 @@ GameObject:
   - component: {fileID: 9093995927580192083}
   - component: {fileID: 8224674952832335338}
   m_Layer: 0
-  m_Name: EnvironmentVelocityHydrant
+  m_Name: VelocityPanicHydrant
   m_TagString: VelocityPanic
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textureWithoutStroke: {fileID: 0}
   reducer: 0.005
-  timeForFullPanic: 120
+  timeForFullPanic: 30
 --- !u!58 &9093995927580192083
 CircleCollider2D:
   m_ObjectHideFlags: 0

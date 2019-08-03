@@ -23,6 +23,6 @@ public class PanicEnvironmentEffectController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.transform.CompareTag(PrefsName.VelocityPanic))
-            panicLevel.ResetTimeForFullPanic();
+            panicLevel.ResetTimeForFullPanic(other.GetComponent<PanicEnvironmentEffect>().timeForFullPanic);
     }
 }
