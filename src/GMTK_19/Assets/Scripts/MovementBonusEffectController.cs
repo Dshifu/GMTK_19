@@ -45,6 +45,8 @@ public class MovementBonusEffectController : MonoBehaviour
         {
             return;
         }
+        
+        
 
         switch (movementBonusSettings.movementBonusType)
         {
