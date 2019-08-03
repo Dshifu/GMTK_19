@@ -9,7 +9,7 @@ public class MovementBonusEffect : MonoBehaviour
 
     private void Start()
     {
-        if (movementBonusSettings.movementBonusType == CharacterMovementController.MovementBonusSettings.MovementBonusType.SHAMPOO)
+        if (movementBonusSettings.movementBonusType == CharacterMovementController.MovementBonusSettings.MovementBonusType.Shampoo)
             movementBonusSettings.delayBeforeActivation = Random.Range(1f, 3f);
     }
 

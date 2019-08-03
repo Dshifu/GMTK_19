@@ -6,12 +6,14 @@ using UnityEngine;
 public class MovementBonusEffectController : MonoBehaviour
 {
     private CharacterMovementController characterMovementController;
+    private Animator characterAnimator;
     
     private CharacterMovementController.MovementBonusSettings movementBonusSettings = null;
 
-    private void Start()
+    private void Awake()
     {
         characterMovementController = GetComponent<CharacterMovementController>();
+        characterAnimator = GetComponent<Animator>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -30,27 +32,41 @@ public class MovementBonusEffectController : MonoBehaviour
         {
             characterMovementController.isMovementBonus = false;
             characterMovementController.speedBonusMultiply = 1f;
+            characterAnimator.SetBool(PrefsName.AnimatorState.IsNeedToPlayParticle, false);
+            characterAnimator.SetBool(PrefsName.AnimatorState.Coka, false);
+            characterAnimator.SetBool(PrefsName.AnimatorState.FireShit, false);
+            characterAnimator.SetBool(PrefsName.AnimatorState.AK, false);
+            characterAnimator.SetBool(PrefsName.AnimatorState.Goroh, false);
+            characterAnimator.SetBool(PrefsName.AnimatorState.Shampoo, false);
+            return;
+        }
+
+        if (Input.GetAxisRaw("Vertical") < 1f)
+        {
+            return;
         }
         
-        if(Input.GetAxisRaw("Vertical") < 1f)
-            return;
+        
 
         switch (movementBonusSettings.movementBonusType)
         {
             case CharacterMovementController.MovementBonusSettings.MovementBonusType.AK:
-            case CharacterMovementController.MovementBonusSettings.MovementBonusType.BEANS:
-            case CharacterMovementController.MovementBonusSettings.MovementBonusType.FIRESHIT:
+            case CharacterMovementController.MovementBonusSettings.MovementBonusType.Goroh:
+            case CharacterMovementController.MovementBonusSettings.MovementBonusType.FireShit:
                 characterMovementController.speedBonusMultiply = movementBonusSettings.straightSpeedMultiplier;
                 movementBonusSettings.effectiveTime -= Time.deltaTime;
+                characterAnimator.SetBool(movementBonusSettings.movementBonusType.ToString(), true);
                 break;
-            case CharacterMovementController.MovementBonusSettings.MovementBonusType.SHAMPOO:
-            case CharacterMovementController.MovementBonusSettings.MovementBonusType.COKE:
+            case CharacterMovementController.MovementBonusSettings.MovementBonusType.Shampoo:
+            case CharacterMovementController.MovementBonusSettings.MovementBonusType.Coka:
                 
                 StartCoroutine(AccelerateForTimeAfterDelay(movementBonusSettings.straightSpeedMultiplier,
                     movementBonusSettings.movementBonusType));
+                characterAnimator.SetBool(movementBonusSettings.movementBonusType.ToString(), true);
                 break;
         }
         characterMovementController.isMovementBonus = true;
+        characterAnimator.SetBool(PrefsName.AnimatorState.IsNeedToPlayParticle, true);
     }
     
     private IEnumerator AccelerateForTimeAfterDelay(float speedMultiplier, CharacterMovementController.MovementBonusSettings.MovementBonusType movementBonusType)

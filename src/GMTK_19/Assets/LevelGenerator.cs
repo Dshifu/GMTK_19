@@ -28,7 +28,7 @@ public class LevelGenerator : MonoBehaviour
         for (var elementPosition = 0; elementPosition < environmentElementsPositions.Length; elementPosition++)
         {
             Instantiate(environmentElements[currentElementIndex], environmentElementsPositions[elementPosition].transform.position,
-                Quaternion.identity).transform.SetParent(parentForBoosts.transform);
+                Quaternion.Euler(0f,0f,Random.Range(0f,360f))).transform.SetParent(parentForBoosts.transform);
 
             currentElementIndex++;
             if (currentElementIndex >= envElementsCount)
