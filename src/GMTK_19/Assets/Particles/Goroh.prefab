@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3365887642012237408}
   - component: {fileID: 3365887642012261986}
   m_Layer: 0
-  m_Name: FX_WaterSplatter
+  m_Name: Goroh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferLoopRange: {x: 0, y: 1}
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   useRigidbodyForVelocity: 1
@@ -1303,8 +1303,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.20719118, g: 0.4528302, b: 0.24597631, a: 1}
-        key1: {r: 0.10332859, g: 0.509434, b: 0.15747593, a: 1}
+        key0: {r: 0, g: 0.6037736, b: 0.09738289, a: 1}
+        key1: {r: 0, g: 0.6039216, b: 0.09803922, a: 1}
         key2: {r: 1, g: 0, b: 0, a: 1}
         key3: {r: 1, g: 0, b: 0, a: 0}
         key4: {r: 1, g: 0, b: 0, a: 0}
