@@ -28,24 +28,28 @@ public class CharacterMovementController : MonoBehaviour
 
         var rotateRaw = Input.GetAxisRaw("Horizontal");
         var moveRaw = Input.GetAxisRaw("Vertical");
+        print(rotateRaw);
 
-        if (rotateRaw < 0)
+        if (rotateRaw < -0.1f)
         {
             characterAnimator.SetBool(PrefsName.AnimatorState.MoveLeft, true);
             characterAnimator.SetBool(PrefsName.AnimatorState.MoveRight, false);
         }
-        else if (rotateRaw > 0)
+        else if (rotateRaw > 0.1f)
         {
-            characterAnimator.SetBool(PrefsName.AnimatorState.MoveLeft, false);
             characterAnimator.SetBool(PrefsName.AnimatorState.MoveRight, true);
+            characterAnimator.SetBool(PrefsName.AnimatorState.MoveLeft, false);
+        }
+        else
+        {
+            characterAnimator.SetBool(PrefsName.AnimatorState.MoveRight, false);
+            characterAnimator.SetBool(PrefsName.AnimatorState.MoveLeft, false);
         }
 
-
-        if(moveRaw > 0 || moveRaw < 0)
+        if (moveRaw > 0.1f || moveRaw < -0.1f)
             characterAnimator.SetBool(PrefsName.AnimatorState.Move, true);
         else
             characterAnimator.SetBool(PrefsName.AnimatorState.Move, false);
-
 
 
         rigidbodyComponent.AddTorque(rotate * characterRotationSpeedMultiplier * -1f);
