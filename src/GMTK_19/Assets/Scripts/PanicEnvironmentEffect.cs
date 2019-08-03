@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-[RequireComponent(typeof(Collider2D), typeof(Image))]
+[RequireComponent(typeof(Collider2D), typeof(SpriteRenderer))]
 public class PanicEnvironmentEffect : MonoBehaviour
 {
     [SerializeField] private Sprite textureWithoutStroke = null;
@@ -13,7 +13,7 @@ public class PanicEnvironmentEffect : MonoBehaviour
 //    private bool IsShowTimeForFullPanic => !isPanicReducer;
 
     //[ShowIf("IsShowPanicReducer", true, true), PropertyRange(0f,1f)]
-    [PropertyRange(0f,1f)]
+    [PropertyRange(-1f,1f)]
     public float reducer;
     
     //[ShowIf("IsShowTimeForFullPanic", false, true)]
@@ -21,8 +21,10 @@ public class PanicEnvironmentEffect : MonoBehaviour
 
     public void CollectEnvironmentReducer()
     {
-        var myImage = GetComponent<Image>();
-        myImage.sprite = textureWithoutStroke;
+        var myImage = GetComponent<SpriteRenderer>();
+        if(textureWithoutStroke != null)
+            myImage.sprite = textureWithoutStroke;
+        myImage.color = Color.black;
         reducer = 0f;
     }
 }
