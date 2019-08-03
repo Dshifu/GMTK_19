@@ -14,12 +14,15 @@ public class PrefsName : MonoBehaviour
 
     public class AnimatorState
     {
-        public const string MoveTrigger = "Move";
+        public const string Move = "Move";
         public const string FireShit = "FireShit";
         public const string Goroh = "Goroh";
         public const string Coka = "Coka";
         public const string Shampoo = "Shampoo";
         public const string AK = "AK";
         public const string IsNeedToPlayParticle = "IsNeedToPlayParticle";
+        public const string MoveRight = "MoveRight";
+        public const string MoveLeft = "MoveLeft";
+
     }
 }
