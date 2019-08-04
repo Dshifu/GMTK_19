@@ -9,7 +9,7 @@ public class BootStrap : MonoBehaviour
 
     IEnumerator Start()
     {
-        _levelGenerator.enabled = true;
+        _levelGenerator.gameObject.SetActive(true);
         yield return null;
         _fadingAnimator.SetBool(PrefsName.AnimatorState.StartUnFading, true);
     }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class MainMenuController : MonoBehaviour
 {
     [Required] [SerializeField] private Animator _mainSceneAnimator;
+    public GameObject _fadingGO;
 
     private bool _isSceneLoading;
 
@@ -17,6 +18,7 @@ public class MainMenuController : MonoBehaviour
     public void StartLoadingGameScene()
     {
         if (_isSceneLoading) return;
+        _fadingGO.SetActive(true);
         _mainSceneAnimator.SetBool(PrefsName.AnimatorState.StartFading, true);
         _isSceneLoading = true;
         StartCoroutine(LoadScene());

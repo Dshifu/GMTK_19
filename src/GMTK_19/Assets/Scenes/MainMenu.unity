@@ -402,7 +402,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 1745426803
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &110259499
@@ -462,7 +462,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &442091141
 RectTransform:
   m_ObjectHideFlags: 0
@@ -661,7 +661,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 738196619
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1438908375
@@ -714,6 +714,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mainSceneAnimator: {fileID: 110259500}
+  _fadingGO: {fileID: 442091140}
 --- !u!4 &1760943416
 Transform:
   m_ObjectHideFlags: 0
