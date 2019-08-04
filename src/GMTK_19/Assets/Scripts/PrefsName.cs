@@ -30,7 +30,7 @@ public class PrefsName : MonoBehaviour
         public const string MoveLeft = "MoveLeft";
         public const string HeartRate = "HeartRate";
         public const string StartOpening = "StartOpening";
-        public const string StartFading = "StartFading";
+        public const string StartPlay = "StartPlay";
         public const string StartUnFading = "StartUnFading";
     }
 }
