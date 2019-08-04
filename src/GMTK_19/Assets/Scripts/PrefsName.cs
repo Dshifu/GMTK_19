@@ -10,7 +10,10 @@ public class PrefsName : MonoBehaviour
     public const string LowPanicVolume = "LowPanicVolume";
     public const string MediumPanicVolume = "MediumPanicVolume";
     public const string HighPanicVolume = "HighPanicVolume";
-    public const string MasterVolume = "MasterVolume";
+    public const string MusicVolume = "MusicVolume";
+    public const string MusicControlVolume = "MusicControllerVolume";
+    public const string SecondCharacterControlVolume = "SecondCharacterControllerVolume";
+    public const string DistractionVolume = "DistractionVolume";
 
 
     public class AnimatorState
