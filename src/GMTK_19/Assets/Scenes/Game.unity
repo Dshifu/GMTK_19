@@ -1963,6 +1963,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3993280184971338067, guid: a5e2e869664a1cc4083acef4846b631f,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 924872693, guid: a5e2e869664a1cc4083acef4846b631f, type: 3}
       propertyPath: PanicBar
       value: 
