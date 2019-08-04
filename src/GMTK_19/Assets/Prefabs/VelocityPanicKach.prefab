@@ -63,9 +63,9 @@ PolygonCollider2D:
     m_Paths:
     - - {x: -0.825, y: -0.475}
       - {x: -0.475, y: -1.525}
-      - {x: -0.275, y: -1.775}
-      - {x: -0.175, y: -1.775}
-      - {x: 0.375, y: -1.475}
+      - {x: -0.3596929, y: -1.4846597}
+      - {x: -0.12724403, y: -1.4781197}
+      - {x: 0.4190192, y: -1.4664174}
       - {x: 0.275, y: -1.375}
       - {x: 0.42109746, y: -1.4739099}
       - {x: 0.98148793, y: -1.1511779}
@@ -86,7 +86,7 @@ PolygonCollider2D:
       - {x: -1.975, y: -1.1750001}
       - {x: -1.975, y: -1.775}
       - {x: -1.325, y: -1.775}
-      - {x: -0.2139765, y: -1.799455}
+      - {x: -0.49152, y: -1.4746124}
       - {x: -1.275, y: -1.325}
       - {x: -0.77500004, y: 0.475}
     - - {x: -0.175, y: 0.175}
@@ -232,6 +232,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 476879879444729488}
     m_Modifications:
+    - target: {fileID: 2629295450359173072, guid: 42e3565a48c66d649adea78ac26478e7,
+        type: 3}
+      propertyPath: m_Name
+      value: Shine
+      objectReference: {fileID: 0}
     - target: {fileID: 2629295450359173073, guid: 42e3565a48c66d649adea78ac26478e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -286,11 +291,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2629295450359173072, guid: 42e3565a48c66d649adea78ac26478e7,
-        type: 3}
-      propertyPath: m_Name
-      value: Shine
       objectReference: {fileID: 0}
     - target: {fileID: 2629295450359173087, guid: 42e3565a48c66d649adea78ac26478e7,
         type: 3}

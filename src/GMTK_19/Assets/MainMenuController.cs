@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class MainMenuController : MonoBehaviour
 {
-    [Required] [SerializeField] private Animator _mainSceneAnimator;
+    [Required] [SerializeField] private Animator _mainSceneAnimator = null;
+    [Required] [SerializeField] private Animator _fadingAnimator = null;
     public GameObject _fadingGO;
 
     private bool _isSceneLoading;
@@ -19,7 +20,7 @@ public class MainMenuController : MonoBehaviour
     {
         if (_isSceneLoading) return;
         _fadingGO.SetActive(true);
-        _mainSceneAnimator.SetBool(PrefsName.AnimatorState.StartFading, true);
+        _fadingAnimator.SetBool(PrefsName.AnimatorState.StartFading, true);
         _isSceneLoading = true;
         StartCoroutine(LoadScene());
     }
