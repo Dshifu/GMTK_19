@@ -28,7 +28,6 @@ public class CharacterMovementController : MonoBehaviour
 
         var rotateRaw = Input.GetAxisRaw("Horizontal");
         var moveRaw = Input.GetAxisRaw("Vertical");
-        print(rotateRaw);
 
         if (rotateRaw < -0.1f)
         {
