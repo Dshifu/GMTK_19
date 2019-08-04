@@ -8,6 +8,7 @@ TagManager:
   - VelocityPanic
   - MovementBonus
   - Environment
+  - PartForCharacter
   layers:
   - Default
   - TransparentFX
