@@ -71,8 +71,6 @@ public class LevelGenerator : MonoBehaviour
 
         for (int i = 0; i < charactersParts.Count; i++)
         {
-            if(i == playerPosIndex || i== secondCharacterIndex)
-                continue;
             var position = charactersParts[i].transform.GetChild(Random.Range(0, charactersParts[i].transform.childCount));
 
             int uniqComponentsNumber = Random.Range(0, uniqObjects.Count);
