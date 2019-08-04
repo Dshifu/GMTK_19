@@ -20,7 +20,7 @@ public class PrefsName : MonoBehaviour
     {
         public const string Move = "Move";
         public const string FireShit = "FireShit";
-        public const string Goroh = "Goroh";
+        public const string Beans = "Beans";
         public const string Coka = "Coka";
         public const string Shampoo = "Shampoo";
         public const string AK = "AK";
