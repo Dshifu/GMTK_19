@@ -83,7 +83,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8420907823360000653}
-  - {fileID: 5736486147494350105}
+  - {fileID: 9208439603626386099}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -178,6 +178,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 476879879444729488}
     m_Modifications:
+    - target: {fileID: 2629295450359173072, guid: 42e3565a48c66d649adea78ac26478e7,
+        type: 3}
+      propertyPath: m_Name
+      value: Shine
+      objectReference: {fileID: 0}
     - target: {fileID: 2629295450359173073, guid: 42e3565a48c66d649adea78ac26478e7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -233,11 +238,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2629295450359173072, guid: 42e3565a48c66d649adea78ac26478e7,
-        type: 3}
-      propertyPath: m_Name
-      value: Shine
-      objectReference: {fileID: 0}
     - target: {fileID: 2629295450359173087, guid: 42e3565a48c66d649adea78ac26478e7,
         type: 3}
       propertyPath: InitialModule.startLifetime.scalar
@@ -248,11 +248,21 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2629295450359173086, guid: 42e3565a48c66d649adea78ac26478e7,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1453473617636892795, guid: 42e3565a48c66d649adea78ac26478e7,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42e3565a48c66d649adea78ac26478e7, type: 3}
---- !u!4 &5736486147494350105 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2629295450359173073, guid: 42e3565a48c66d649adea78ac26478e7,
+--- !u!224 &9208439603626386099 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1453473617636892795, guid: 42e3565a48c66d649adea78ac26478e7,
     type: 3}
   m_PrefabInstance: {fileID: 7773553299049677512}
   m_PrefabAsset: {fileID: 0}

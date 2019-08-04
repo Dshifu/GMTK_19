@@ -1050,7 +1050,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   followTarget: {fileID: 0}
-  cameraMoveSpeed: 1
+  cameraMoveSpeed: 2
 --- !u!1 &1335338747
 GameObject:
   m_ObjectHideFlags: 0

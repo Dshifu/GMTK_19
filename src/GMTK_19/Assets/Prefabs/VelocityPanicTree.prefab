@@ -360,6 +360,11 @@ PrefabInstance:
       propertyPath: ShapeModule.radiusThickness
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2629295450359173086, guid: 42e3565a48c66d649adea78ac26478e7,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -10
+      objectReference: {fileID: 0}
     - target: {fileID: 1453473617636892795, guid: 42e3565a48c66d649adea78ac26478e7,
         type: 3}
       propertyPath: m_RootOrder
