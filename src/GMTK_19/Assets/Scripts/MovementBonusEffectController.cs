@@ -9,7 +9,8 @@ public class MovementBonusEffectController : MonoBehaviour
     private Animator characterAnimator;
     private CharacterMovementController.MovementBonusSettings movementBonusSettings = null;
 
-    public ParticleSystem PickUpEffect; 
+    public ParticleSystem PickUpEffect;
+    public MovementBonusEffect[] MovementBonuses;
 
     private void Awake()
     {
@@ -23,6 +24,14 @@ public class MovementBonusEffectController : MonoBehaviour
         PickUpEffect.Play();
         var bonusEffect = other.GetComponent<MovementBonusEffect>();
         movementBonusSettings = bonusEffect.movementBonusSettings;
+
+        DisableMoveBonusOnCharacter();
+        DisplayMoveBonusOnCharacter();
+
+        for (var bonus = 0; bonus < MovementBonuses.Length; bonus++)
+            if (MovementBonuses[bonus].movementBonusSettings.movementBonusType == movementBonusSettings.movementBonusType)
+                MovementBonuses[bonus].gameObject.SetActive(true);
+
         bonusEffect.CollectMovementBonus();
     }
 
@@ -32,7 +41,8 @@ public class MovementBonusEffectController : MonoBehaviour
             return;
         if (movementBonusSettings.effectiveTime < 0)
         {
-            characterMovementController.isMovementBonus = false;
+            DisableMoveBonusOnCharacter();
+
             characterMovementController.speedBonusMultiply = 1f;
             characterAnimator.SetBool(PrefsName.AnimatorState.IsNeedToPlayParticle, false);
             characterAnimator.SetBool(PrefsName.AnimatorState.Coka, false);
@@ -70,7 +80,20 @@ public class MovementBonusEffectController : MonoBehaviour
         characterMovementController.isMovementBonus = true;
         characterAnimator.SetBool(PrefsName.AnimatorState.IsNeedToPlayParticle, true);
     }
-    
+
+    private void DisplayMoveBonusOnCharacter()
+    {
+        for (var bonus = 0; bonus < MovementBonuses.Length; bonus++)
+            if (MovementBonuses[bonus].movementBonusSettings.movementBonusType == movementBonusSettings.movementBonusType)
+                MovementBonuses[bonus].gameObject.SetActive(true);
+    }
+
+    private void DisableMoveBonusOnCharacter()
+    {
+        for (var bonus = 0; bonus < MovementBonuses.Length; bonus++)
+            MovementBonuses[bonus].gameObject.SetActive(false);
+    }
+
     private IEnumerator AccelerateForTimeAfterDelay(float speedMultiplier, CharacterMovementController.MovementBonusSettings.MovementBonusType movementBonusType)
     {
         yield return new WaitForSeconds(movementBonusSettings.delayBeforeActivation);
