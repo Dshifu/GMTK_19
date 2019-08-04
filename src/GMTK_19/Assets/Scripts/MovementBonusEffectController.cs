@@ -41,6 +41,7 @@ public class MovementBonusEffectController : MonoBehaviour
             return;
         if (movementBonusSettings.effectiveTime < 0)
         {
+            characterMovementController.isMovementBonus = false;
             DisableMoveBonusOnCharacter();
 
             characterMovementController.speedBonusMultiply = 1f;
@@ -59,8 +60,6 @@ public class MovementBonusEffectController : MonoBehaviour
             return;
         }
         
-        
-
         switch (movementBonusSettings.movementBonusType)
         {
             case CharacterMovementController.MovementBonusSettings.MovementBonusType.AK:
