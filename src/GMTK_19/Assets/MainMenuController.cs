@@ -21,6 +21,7 @@ public class MainMenuController : MonoBehaviour
     public void StartLoadingGameScene()
     {
         _mainSceneAnimator.SetBool(PrefsName.AnimatorState.StartOpening, false);
+
         if (_isSceneLoading) return;
         FadingGo.SetActive(true);
         StartBtn.SetActive(false);

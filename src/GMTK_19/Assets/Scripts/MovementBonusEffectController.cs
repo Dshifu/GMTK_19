@@ -106,4 +106,10 @@ public class MovementBonusEffectController : MonoBehaviour
             yield return null;
         }
     }
+
+    public ParticleSystem GetCurrentParticleSystem()
+    {
+        return transform.Find(movementBonusSettings.movementBonusType.ToString())
+                    .GetComponent<ParticleSystem>();
+    }
 }
