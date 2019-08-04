@@ -632,7 +632,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243357351824195520, guid: a753228487953594b801b75af861cac6,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: f9dc8dc6561bc174e8719e38e3601026, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 72dac2800d8e0d846b8720b9a7fa27e4, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -834,7 +834,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243897245630519652, guid: a753228487953594b801b75af861cac6,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 0c9dc20a008d61440ba4a8d98e53165c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: f1edaaa9ecf0d74479a16d18a1b5bf7e, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -1470,7 +1470,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 243422379628393986, guid: a753228487953594b801b75af861cac6,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: ea66645857eb3d8498f039c867ff34ce, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 1b116d92f0cca3547b2fb73299a75e60, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
