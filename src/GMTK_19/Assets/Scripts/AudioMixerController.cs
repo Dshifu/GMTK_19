@@ -1,4 +1,5 @@
-﻿using Sirenix.OdinInspector;
+﻿using System;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Audio;
 
@@ -113,14 +114,16 @@ public class AudioMixerController : MonoBehaviour
         var masterVolumeLow = -80f;
         var masterVolumeMedium = -80f;
         var masterVolumeHigh = -80f;
-        if (lowPanicVolume < 0 && lowPanicVolume > -80)
+        if (lowPanicVolume < 0 && lowPanicVolume > -80f)
             masterVolumeLow = lowPanicVolume;
-        if (mediumPanicVolume < 0 && mediumPanicVolume > -80)
+        if (mediumPanicVolume < 0 && mediumPanicVolume > -80f)
             masterVolumeMedium = mediumPanicVolume;
-        if (highPanicVolume < 0 && highPanicVolume > -80)
+        if (highPanicVolume < 0 && highPanicVolume > -80f)
             masterVolumeHigh = highPanicVolume;
 
         var temp = Mathf.Max(Mathf.Max(masterVolumeLow, masterVolumeMedium), masterVolumeHigh);
+        if (Math.Abs(temp - 80f) < 0.1f)
+            temp = 0f;
         audioMixer.SetFloat(PrefsName.MusicVolume, -temp);
     }
 }
