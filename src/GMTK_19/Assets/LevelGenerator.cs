@@ -13,9 +13,13 @@ public class LevelGenerator : MonoBehaviour
     [Required] public GameObject[] movers;
     [Required] public GameObject[] spaceObjects;
     [Required] public List<GameObject> uniqObjects;
-    [Required] public GameObject secondCharacter;
-    [Required] public GameObject player;
+    [Required] public GameObject secondCharacterPrefab;
+    [Required] public GameObject playerPrefab;
     [Required] public GameObject baseObjectWithParts;
+    
+    [SerializeField] private PanicLevel panicLevel = null;
+    [SerializeField] private AudioMixerController audioMixerController = null;
+    [SerializeField] private CameraFollow cameraFollow = null;
 
 
     private const int EnvironmentsCount = 2;
@@ -24,25 +28,44 @@ public class LevelGenerator : MonoBehaviour
     private const int MoversCount = 1;
     private const int SpaceCount = 1;
 
+    private GameObject player = null;
+    private GameObject secondCharacter = null;
+
     private IEnumerator Start()
     {
         GenerateCurrentLevel();
         yield return new WaitForSeconds(0.1f);
         GenerateCharacters();
+        
+        cameraFollow.followTarget = player.transform;
+        player.GetComponent<PanicEnvironmentEffectController>().panicLevel =
+            panicLevel;
+        audioMixerController.secondCharacter = secondCharacter.transform;
+        
+        player.SetActive(true);
     }
 
     private void GenerateCharacters()
     {
-        var charactersParts = GameObject.FindGameObjectsWithTag(PrefsName.PartForCharacter);
+        List<GameObject> charactersParts = new List<GameObject>(GameObject.FindGameObjectsWithTag(PrefsName.PartForCharacter));
 
-        int playerPosIndex = Random.Range(0, charactersParts.Length);
-        int secondCharacterIndex = charactersParts.Length - playerPosIndex;
+        int playerPosIndex = RandomBut(charactersParts.Count, 4);
+        int secondCharacterIndex = charactersParts.Count - 1 - playerPosIndex;
+        
+        Debug.Log("playerPosIndex: " + playerPosIndex);
+        Debug.Log("secondCharacterIndex: " + secondCharacterIndex);
 
-        Instantiate(player, charactersParts[playerPosIndex].transform.position, Quaternion.identity);
-        Instantiate(secondCharacter, charactersParts[secondCharacterIndex].transform.position,
+        player = Instantiate(playerPrefab, charactersParts[playerPosIndex].transform.position, Quaternion.identity);
+        secondCharacter = Instantiate(secondCharacterPrefab, charactersParts[secondCharacterIndex].transform.position,
             Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
         
-        for (int i = 0; i < charactersParts.Length; i++)
+        charactersParts.RemoveAt(playerPosIndex);
+        if(secondCharacterIndex > playerPosIndex)
+            charactersParts.RemoveAt(secondCharacterIndex-1);
+        else
+            charactersParts.RemoveAt(secondCharacterIndex);
+
+        for (int i = 0; i < charactersParts.Count; i++)
         {
             if(i == playerPosIndex || i== secondCharacterIndex)
                 continue;
@@ -52,7 +75,16 @@ public class LevelGenerator : MonoBehaviour
             Instantiate(uniqObjects[uniqComponentsNumber], position);
             uniqObjects.RemoveAt(uniqComponentsNumber);
         }
+    }
 
+    public int RandomBut(int randomMax, int bunNum)
+    {
+        while (true)
+        {
+            var temp = Random.Range(0, randomMax);
+            if (temp == bunNum) continue;
+            return temp;
+        }
     }
 
     private void GenerateCurrentLevel()
@@ -82,17 +114,17 @@ public class LevelGenerator : MonoBehaviour
         {
             if (part.CompareTag(PrefsName.PartForCharacter))
             {
-                if (isCanBeCharacter)
-                {
+                //if (isCanBeCharacter)
+                //{
                     Instantiate(part, sceneObject.transform, true);
                     continue;
-                }
-                var position = part.transform.GetChild(Random.Range(0, part.transform.childCount));
-
-                int uniqComponentsNumber = Random.Range(0, uniqObjects.Count);
-                Instantiate(uniqObjects[uniqComponentsNumber], position);
-                uniqObjects.RemoveAt(uniqComponentsNumber);
-                Destroy(part.gameObject);
+                //}
+//                var position = part.transform.GetChild(Random.Range(0, part.transform.childCount));
+//
+//                int uniqComponentsNumber = Random.Range(0, uniqObjects.Count);
+//                Instantiate(uniqObjects[uniqComponentsNumber], position);
+//                uniqObjects.RemoveAt(uniqComponentsNumber);
+//                Destroy(part.gameObject);
             }
             
             int environmentsSpawned = 0;

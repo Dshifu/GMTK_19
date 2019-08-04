@@ -708,6 +708,7 @@ MonoBehaviour:
   - {fileID: 5947730976337036281, guid: 7f65600be9000bd4e8b6e5cbd7dfad3b, type: 3}
   - {fileID: 5947730976337036281, guid: 6680a90a5b14bbc4789b5cc93128c469, type: 3}
   uniqObjects:
+  - {fileID: 4974490688346619608, guid: d72bb12564a999c42a1a820f4da68221, type: 3}
   - {fileID: 5947730976337036281, guid: 6c96ae24f913dc046a93e52d6a551536, type: 3}
   - {fileID: 5947730976337036281, guid: 8bb2e2d4eccd00b478517c8d367c4796, type: 3}
   - {fileID: 5947730976337036281, guid: 7bf82c0ebe4cab94e9bf63abf3737834, type: 3}
@@ -715,11 +716,15 @@ MonoBehaviour:
   - {fileID: 5947730976337036281, guid: 06cd18b0e9717d643accec75ccb00013, type: 3}
   - {fileID: 5947730976337036281, guid: 7f65600be9000bd4e8b6e5cbd7dfad3b, type: 3}
   - {fileID: 5947730976337036281, guid: 6680a90a5b14bbc4789b5cc93128c469, type: 3}
-  secondCharacter: {fileID: 7756400922608322277, guid: 84b18e46e5bf94949a1d96e82366057e,
+  secondCharacterPrefab: {fileID: 7756400922608322277, guid: 84b18e46e5bf94949a1d96e82366057e,
     type: 3}
-  player: {fileID: 7394705968425248587, guid: 69ecb5430a03de045a6d10885a9812e1, type: 3}
+  playerPrefab: {fileID: 7394705968425248587, guid: 69ecb5430a03de045a6d10885a9812e1,
+    type: 3}
   baseObjectWithParts: {fileID: 4974490688346619608, guid: d72bb12564a999c42a1a820f4da68221,
     type: 3}
+  panicLevel: {fileID: 1895928324}
+  audioMixerController: {fileID: 1379209536}
+  cameraFollow: {fileID: 1286333460}
 --- !u!4 &945835942
 Transform:
   m_ObjectHideFlags: 0
@@ -1382,9 +1387,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fadingAnimator: {fileID: 1335338748}
   _levelGenerator: {fileID: 945835941}
-  panicLevel: {fileID: 1895928324}
-  audioMixerController: {fileID: 1379209536}
-  cameraFollow: {fileID: 1286333460}
 --- !u!4 &1639520593
 Transform:
   m_ObjectHideFlags: 0
