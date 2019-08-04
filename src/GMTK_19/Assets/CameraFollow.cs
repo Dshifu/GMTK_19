@@ -9,6 +9,8 @@ public class CameraFollow : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(followTarget == null)
+            return;
         var cameraFollowPosition = followTarget.position;
         var position = transform.position;
         cameraFollowPosition.z = position.z;

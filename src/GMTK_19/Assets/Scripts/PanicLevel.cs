@@ -8,7 +8,9 @@ public class PanicLevel : MonoBehaviour
 {
     private const float ValueTimeForFullPanic = 60f;
     private float timeForFullPanic = ValueTimeForFullPanic;
-    [SerializeField] private Transform panicLevelTransform = null; 
+    [SerializeField] private Transform panicLevelTransform = null;
+
+    public bool isGameOver = false;
 
     private void Start()
     {
@@ -17,6 +19,8 @@ public class PanicLevel : MonoBehaviour
 
     private void Update()
     {
+        if(isGameOver)
+            return;
         ChangePanic(Time.deltaTime/timeForFullPanic);
     }
 
@@ -29,7 +33,11 @@ public class PanicLevel : MonoBehaviour
         localScale = new Vector3(localScale.x + normalizeValue, localScale.y);
 
         if (localScale.x > 1)
+        {
             localScale.x = 1;
+            GameController.Instance.GameOver(false);
+        }
+        
         else if (localScale.x < 0)
             localScale.x = 0;
         

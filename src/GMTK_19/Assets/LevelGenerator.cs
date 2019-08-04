@@ -20,6 +20,7 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private PanicLevel panicLevel = null;
     [SerializeField] private AudioMixerController audioMixerController = null;
     [SerializeField] private CameraFollow cameraFollow = null;
+    [SerializeField] private GameController gameController = null;
 
 
     private const int EnvironmentsCount = 2;
@@ -40,7 +41,10 @@ public class LevelGenerator : MonoBehaviour
         cameraFollow.followTarget = player.transform;
         player.GetComponent<PanicEnvironmentEffectController>().panicLevel =
             panicLevel;
+        audioMixerController.player = player.transform;
         audioMixerController.secondCharacter = secondCharacter.transform;
+        gameController.player = player;
+        gameController.panicLevel = panicLevel;
         
         player.SetActive(true);
     }
@@ -55,8 +59,8 @@ public class LevelGenerator : MonoBehaviour
         Debug.Log("playerPosIndex: " + playerPosIndex);
         Debug.Log("secondCharacterIndex: " + secondCharacterIndex);
 
-        player = Instantiate(playerPrefab, charactersParts[playerPosIndex].transform.position, Quaternion.identity);
-        secondCharacter = Instantiate(secondCharacterPrefab, charactersParts[secondCharacterIndex].transform.position,
+        player = Instantiate(playerPrefab, charactersParts[playerPosIndex].transform.GetChild(Random.Range(0, charactersParts[playerPosIndex].transform.childCount)).position, Quaternion.identity);
+        secondCharacter = Instantiate(secondCharacterPrefab, charactersParts[secondCharacterIndex].transform.GetChild(Random.Range(0, charactersParts[secondCharacterIndex].transform.childCount)).position,
             Quaternion.Euler(0f, 0f, Random.Range(0f, 360f)));
         
         charactersParts.RemoveAt(playerPosIndex);

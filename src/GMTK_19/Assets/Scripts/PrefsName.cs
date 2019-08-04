@@ -15,6 +15,7 @@ public class PrefsName : MonoBehaviour
     public const string MusicControlVolume = "MusicControllerVolume";
     public const string SecondCharacterControlVolume = "SecondCharacterControllerVolume";
     public const string DistractionVolume = "DistractionVolume";
+    public const string SecondCharacter = "SecondCharacter";
 
 
     public class AnimatorState
@@ -32,5 +33,6 @@ public class PrefsName : MonoBehaviour
         public const string StartOpening = "StartOpening";
         public const string StartPlay = "StartPlay";
         public const string StartUnFading = "StartUnFading";
+        public const string StartFading = "StartFading";
     }
 }
