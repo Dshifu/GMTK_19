@@ -7,8 +7,9 @@ public class MovementBonusEffectController : MonoBehaviour
 {
     private CharacterMovementController characterMovementController;
     private Animator characterAnimator;
-    
     private CharacterMovementController.MovementBonusSettings movementBonusSettings = null;
+
+    public ParticleSystem PickUpEffect; 
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class MovementBonusEffectController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.transform.CompareTag(PrefsName.MovementBonus)) return;
+        PickUpEffect.Play();
         var bonusEffect = other.GetComponent<MovementBonusEffect>();
         movementBonusSettings = bonusEffect.movementBonusSettings;
         bonusEffect.CollectMovementBonus();

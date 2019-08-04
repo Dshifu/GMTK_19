@@ -88,7 +88,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e15653a45b7984aa0b2c1c3688dbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Particle: {fileID: 0}
+  Particle: {fileID: 5256574171417132098, guid: 07c610a3e3580564589b76747f0bacbb,
+    type: 3}
 --- !u!114 &114212627632324906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -101,7 +102,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e15653a45b7984aa0b2c1c3688dbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Particle: {fileID: 0}
+  Particle: {fileID: 8159481182214573237, guid: beb8989ab59880440a09017f386c9d7a,
+    type: 3}
 --- !u!114 &114227454624969024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -114,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e15653a45b7984aa0b2c1c3688dbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Particle: {fileID: 0}
+  Particle: {fileID: 19852924, guid: b5699fa9edf2e1640b11045ae323aeff, type: 3}
 --- !u!114 &114281215003421938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -127,7 +129,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e15653a45b7984aa0b2c1c3688dbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Particle: {fileID: 0}
+  Particle: {fileID: 3365887642012237408, guid: 86a46698c3cacc849a23ad691d462e2d,
+    type: 3}
 --- !u!114 &114918436599203148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -140,7 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e15653a45b7984aa0b2c1c3688dbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Particle: {fileID: 0}
+  Particle: {fileID: 8159481182214573237, guid: 0c89f986c464f1a428a1c7226b80e65c,
+    type: 3}
 --- !u!206 &206921378183315912
 BlendTree:
   m_ObjectHideFlags: 1
