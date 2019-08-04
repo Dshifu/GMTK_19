@@ -21,10 +21,13 @@ public class PanicEnvironmentEffect : MonoBehaviour
 
     public void CollectEnvironmentReducer()
     {
+        foreach (var collider in GetComponentsInChildren<Collider2D>())
+            collider.enabled = false;
+
         var myImage = GetComponent<SpriteRenderer>();
         if(textureWithoutStroke != null)
             myImage.sprite = textureWithoutStroke;
-        myImage.color = Color.black;
+        myImage.color = new Color(1f,1f,1f,0.5f);
         reducer = 0f;
     }
 }
