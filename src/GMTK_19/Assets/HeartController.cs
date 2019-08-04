@@ -6,6 +6,7 @@ public class HeartController : MonoBehaviour
 {
     [SerializeField] private PanicLevel panicLevel = null;
     private Animator animator = null;
+    private float MINIMUM_HEART_RATE_MULTIPLIER = 0.3f;
 
     private void Start()
     {
@@ -14,6 +15,9 @@ public class HeartController : MonoBehaviour
 
     private void Update()
     {
-        animator.SetFloat(PrefsName.AnimatorState.HeartRate, panicLevel.GetPanicLevel);
+        float heartRateMultiplier = Mathf.Max(MINIMUM_HEART_RATE_MULTIPLIER, panicLevel.GetPanicLevel);
+        if (heartRateMultiplier >= 1)
+            heartRateMultiplier = 0;
+        animator.SetFloat(PrefsName.AnimatorState.HeartRate, heartRateMultiplier);
     }
 }
