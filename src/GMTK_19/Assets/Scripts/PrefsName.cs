@@ -7,6 +7,7 @@ public class PrefsName : MonoBehaviour
     public const string ReducerPanic = "ReducerPanic";
     public const string VelocityPanic = "VelocityPanic";
     public const string MovementBonus = "MovementBonus";
+    public const string PartForCharacter = "PartForCharacter";
     public const string LowPanicVolume = "LowPanicVolume";
     public const string MediumPanicVolume = "MediumPanicVolume";
     public const string HighPanicVolume = "HighPanicVolume";

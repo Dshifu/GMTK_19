@@ -59,6 +59,8 @@ public class CharacterMovementController : MonoBehaviour
 
             return;
         }
+        if(move < 0)
+            rigidbodyComponent.AddForce(characterVerticalSpeedMultiplier * move * (Vector2)transform.up);
         
         rigidbodyComponent.AddForce(characterVerticalSpeedMultiplier * speedBonusMultiply * (Vector2)transform.up);
     }

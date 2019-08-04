@@ -56,7 +56,7 @@ public class MovementBonusEffectController : MonoBehaviour
 
         if (Input.GetAxisRaw("Vertical") < 1f)
         {
-            characterMovementController.speedBonusMultiply = 1f;
+            characterMovementController.speedBonusMultiply = 0f;
             return;
         }
         
