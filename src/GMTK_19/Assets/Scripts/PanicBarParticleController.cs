@@ -13,7 +13,7 @@ public class PanicBarParticleController : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(PanicLevel.IsFullPanicAtTheMoment)
+        if (PanicLevel.IsFullPanicAtTheMoment)
             _barSystem.Stop();
         else
             _barSystem.Play();

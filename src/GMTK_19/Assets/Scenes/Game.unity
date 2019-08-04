@@ -1836,6 +1836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0051b241a9e393840a18f86334259b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  PickUpEffect: {fileID: 0}
 --- !u!1 &1964586037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,5 +2051,16 @@ PrefabInstance:
       propertyPath: panicLevel
       value: 
       objectReference: {fileID: 1895928324}
+    - target: {fileID: 7668406662270170002, guid: 69ecb5430a03de045a6d10885a9812e1,
+        type: 3}
+      propertyPath: PickUpEffect
+      value: 
+      objectReference: {fileID: 7668406662270170001}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69ecb5430a03de045a6d10885a9812e1, type: 3}
+--- !u!198 &7668406662270170001 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5445901467911656542, guid: 69ecb5430a03de045a6d10885a9812e1,
+    type: 3}
+  m_PrefabInstance: {fileID: 7668406662270170000}
+  m_PrefabAsset: {fileID: 0}

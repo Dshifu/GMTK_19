@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayParticle : StateMachineBehaviour
 {
-    public ParticleSystem Particle;
+    [SerializeField] public ParticleSystem Particle;
     
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
