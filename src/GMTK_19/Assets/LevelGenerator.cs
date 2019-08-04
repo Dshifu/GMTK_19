@@ -14,6 +14,7 @@ public class LevelGenerator : MonoBehaviour
     [Required] public GameObject secondCharacter;
     [Required] public GameObject player;
     [Required] public GameObject baseObjectWithParts;
+    [Required] public GameObject longWayObject;
     [Required] public GameObject[] secondCharacterPotentialPositions;
 
 
@@ -64,7 +65,12 @@ public class LevelGenerator : MonoBehaviour
         temp.transform.localScale = new Vector3(randomScaleX, randomScaleY, 1f);
         GenerateParts(temp, sceneObject4);
         Destroy(temp);
-        
+
+        temp = Instantiate(longWayObject);
+        var sceneObject5 = new GameObject("Part5");
+        GenerateParts(temp, sceneObject5);
+        Destroy(temp);
+
 //        var envElementsCount = environmentElements.Length;
 //        var currentElementIndex = 0;
 //        var parentForBoosts = new GameObject("BoostsParent");
