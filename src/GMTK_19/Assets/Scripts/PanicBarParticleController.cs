@@ -6,9 +6,15 @@ public class PanicBarParticleController : MonoBehaviour
     public GameObject PanicBar;
     public PanicLevel PanicLevel;
 
+    private float pixelWidth;
+
     void Start()
     {
         _barSystem = GetComponent<ParticleSystem>();
+        pixelWidth = Camera.main.pixelWidth;
+
+        var shape = _barSystem.shape;
+        shape.scale = new Vector3( (pixelWidth / 2f) - 50f, 1f,1f);
     }
 
     private void LateUpdate()
@@ -18,7 +24,7 @@ public class PanicBarParticleController : MonoBehaviour
         else
             _barSystem.Play();
 
-        var emmision = _barSystem.emission;
-        emmision.rateOverTimeMultiplier = PanicBar.transform.localScale.x * 1000f;
+        var emission = _barSystem.emission;
+        emission.rateOverTimeMultiplier = PanicBar.transform.localScale.x * 1000f;
     }
 }
