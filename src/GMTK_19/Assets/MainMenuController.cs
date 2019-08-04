@@ -5,32 +5,33 @@ using UnityEngine;
 public class MainMenuController : MonoBehaviour
 {
     [Required] [SerializeField] private Animator _mainSceneAnimator = null;
-    [Required] [SerializeField] private Animator _fadingAnimator = null;
 
-    [Required] [SerializeField] private AnimationClip _startPlayAnim = null;
-
-    public GameObject _fadingGO;
+    public AnimationClip StartGameAnimation;
+    public GameObject StartBtn;
+    public GameObject FadingGo;
 
     private bool _isSceneLoading;
 
     private IEnumerator Start()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
         _mainSceneAnimator.SetBool(PrefsName.AnimatorState.StartOpening, true);
     }
 
     public void StartLoadingGameScene()
     {
+        _mainSceneAnimator.SetBool(PrefsName.AnimatorState.StartOpening, false);
         if (_isSceneLoading) return;
-        _fadingGO.SetActive(true);
-        _fadingAnimator.SetBool(PrefsName.AnimatorState.StartPlay, true);
+        FadingGo.SetActive(true);
+        StartBtn.SetActive(false);
+        _mainSceneAnimator.SetBool(PrefsName.AnimatorState.StartPlay, true);
         _isSceneLoading = true;
         StartCoroutine(LoadScene());
     }
 
     private IEnumerator LoadScene()
     {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(StartGameAnimation.length + 2f);
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
     }
 
