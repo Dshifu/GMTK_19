@@ -1409,8 +1409,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: a753228487953594b801b75af861cac6, type: 2}
   panicLevel: {fileID: 1895928324}
-  distanceToSoundSecondCharacter: 30
-  distanceToDistraction: 60
+  distanceToSoundSecondCharacter: 35
+  distanceToDistraction: 80
   secondCharacter: {fileID: 0}
   player: {fileID: 0}
 --- !u!1 &1385829543

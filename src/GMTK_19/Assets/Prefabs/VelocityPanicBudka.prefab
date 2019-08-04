@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textureWithoutStroke: {fileID: 0}
   reducer: 0
-  timeForFullPanic: 40
+  timeForFullPanic: 25
 --- !u!58 &9093995927580192083
 CircleCollider2D:
   m_ObjectHideFlags: 0
