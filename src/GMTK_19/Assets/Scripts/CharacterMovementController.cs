@@ -31,13 +31,13 @@ public class CharacterMovementController : MonoBehaviour
 
         if (rotateRaw < -0.1f)
         {
-            characterAnimator.SetBool(PrefsName.AnimatorState.MoveLeft, true);
-            characterAnimator.SetBool(PrefsName.AnimatorState.MoveRight, false);
+            characterAnimator.SetBool(PrefsName.AnimatorState.MoveLeft, false);
+            characterAnimator.SetBool(PrefsName.AnimatorState.MoveRight, true);
         }
         else if (rotateRaw > 0.1f)
         {
-            characterAnimator.SetBool(PrefsName.AnimatorState.MoveRight, true);
-            characterAnimator.SetBool(PrefsName.AnimatorState.MoveLeft, false);
+            characterAnimator.SetBool(PrefsName.AnimatorState.MoveRight, false);
+            characterAnimator.SetBool(PrefsName.AnimatorState.MoveLeft, true);
         }
         else
         {
