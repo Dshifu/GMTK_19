@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MainMenuController : MonoBehaviour
 {
-    [Required] [SerializeField] private Animator _mainSceneAnimator;
-    [Required] [SerializeField] private Animator _fadingAnimator;
+    [Required] [SerializeField] private Animator _mainSceneAnimator = null;
+    [Required] [SerializeField] private Animator _fadingAnimator = null;
     public GameObject _fadingGO;
 
     private bool _isSceneLoading;

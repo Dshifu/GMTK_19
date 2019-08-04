@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BootStrap : MonoBehaviour
 {
-    [Required] [SerializeField] private Animator _fadingAnimator;
-    [Required] [SerializeField] private LevelGenerator _levelGenerator;
+    [Required] [SerializeField] private Animator _fadingAnimator = null;
+    [Required] [SerializeField] private LevelGenerator _levelGenerator = null;
 
     IEnumerator Start()
     {

@@ -88,10 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e15653a45b7984aa0b2c1c3688dbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Particle: {fileID: 5256574171417132098, guid: 07c610a3e3580564589b76747f0bacbb,
-    type: 3}
-  Moover: {fileID: 224709916165241965, guid: 7a8c1162e6bc06445910327c43259f4e, type: 3}
-  Cotainer: {fileID: 0}
+  Particle: {fileID: 0}
 --- !u!114 &114212627632324906
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,10 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e15653a45b7984aa0b2c1c3688dbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Particle: {fileID: 8159481182214573237, guid: beb8989ab59880440a09017f386c9d7a,
-    type: 3}
-  Moover: {fileID: 224709916165241965, guid: d777a467b3ffadb44b4d93a4d39823f2, type: 3}
-  Cotainer: {fileID: 0}
+  Particle: {fileID: 0}
 --- !u!114 &114227454624969024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -120,9 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e15653a45b7984aa0b2c1c3688dbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Particle: {fileID: 19852924, guid: b5699fa9edf2e1640b11045ae323aeff, type: 3}
-  Moover: {fileID: 224709916165241965, guid: 24287e6e3358da94e849820017d4e01d, type: 3}
-  Cotainer: {fileID: 0}
+  Particle: {fileID: 0}
 --- !u!114 &114281215003421938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -135,10 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e15653a45b7984aa0b2c1c3688dbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Particle: {fileID: 3365887642012237408, guid: 86a46698c3cacc849a23ad691d462e2d,
-    type: 3}
-  Moover: {fileID: 224709916165241965, guid: 38ebfaf48a4cf6849986bb95bd2f70d3, type: 3}
-  Cotainer: {fileID: 0}
+  Particle: {fileID: 0}
 --- !u!114 &114918436599203148
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -151,10 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51e15653a45b7984aa0b2c1c3688dbe7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Particle: {fileID: 8159481182214573237, guid: 0c89f986c464f1a428a1c7226b80e65c,
-    type: 3}
-  Moover: {fileID: 224709916165241965, guid: 511239384dc9d404ea154d039beeda06, type: 3}
-  Cotainer: {fileID: 0}
+  Particle: {fileID: 0}
 --- !u!206 &206921378183315912
 BlendTree:
   m_ObjectHideFlags: 1
@@ -241,6 +227,31 @@ AnimatorStateTransition:
   m_TransitionOffset: 0
   m_ExitTime: 0.75
   m_HasExitTime: 0
+  m_HasFixedDuration: 1
+  m_InterruptionSource: 0
+  m_OrderedInterruption: 1
+  m_CanTransitionToSelf: 1
+--- !u!1101 &1101189104754477628
+AnimatorStateTransition:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: FireShit
+    m_EventTreshold: 0
+  m_DstStateMachine: {fileID: 1107704519270479214}
+  m_DstState: {fileID: 0}
+  m_Solo: 0
+  m_Mute: 0
+  m_IsExit: 0
+  serializedVersion: 3
+  m_TransitionDuration: 0.25
+  m_TransitionOffset: 0
+  m_ExitTime: 0.75
+  m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -1026,7 +1037,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102991147347174282}
-    m_Position: {x: 444, y: -108, z: 0}
+    m_Position: {x: 420, y: -60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102984355917096746}
     m_Position: {x: 420, y: 36, z: 0}
