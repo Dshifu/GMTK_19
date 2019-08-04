@@ -6,6 +6,9 @@ public class MainMenuController : MonoBehaviour
 {
     [Required] [SerializeField] private Animator _mainSceneAnimator = null;
     [Required] [SerializeField] private Animator _fadingAnimator = null;
+
+    [Required] [SerializeField] private AnimationClip _startPlayAnim = null;
+
     public GameObject _fadingGO;
 
     private bool _isSceneLoading;
@@ -20,7 +23,7 @@ public class MainMenuController : MonoBehaviour
     {
         if (_isSceneLoading) return;
         _fadingGO.SetActive(true);
-        _fadingAnimator.SetBool(PrefsName.AnimatorState.StartFading, true);
+        _fadingAnimator.SetBool(PrefsName.AnimatorState.StartPlay, true);
         _isSceneLoading = true;
         StartCoroutine(LoadScene());
     }
