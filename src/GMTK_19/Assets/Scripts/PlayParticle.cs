@@ -1,17 +1,17 @@
-﻿using UnityEngine;
+﻿using System.Linq;
+using UnityEngine;
 
 public class PlayParticle : StateMachineBehaviour
 {
-    [SerializeField] public ParticleSystem Particle;
+    public ParticleSystem Particle;
 
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
-    //{
-    //    currentMover = Instantiate(Moover, Cotainer.transform);
-    //    currentMover.GetComponent<MovementBonusEffect>().enabled = false;
-    //    foreach (var collider in currentMover.GetComponentsInChildren<Collider>())
-    //        collider.enabled = false;
-    //}
+    override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        if(Particle != null) return;
+                
+        Particle = animator.GetComponent<MovementBonusEffectController>().GetCurrentParticleSystem();
+    }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
     override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
