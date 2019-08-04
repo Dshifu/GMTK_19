@@ -48,7 +48,7 @@ public class AudioMixerController : MonoBehaviour
 //            return;
         var distractionVolume = -80f;
         var secondCharacterControlVolume = -80f;
-        var musicControlVolume = 0f;
+        var musicControlVolume = -20f;
         if (distance < distanceToDistraction)
         {
             var coof = (LowVolumeLimit - HighVolumeLimitForDistraction) /
@@ -64,7 +64,7 @@ public class AudioMixerController : MonoBehaviour
             Debug.Log("coof2: " + (distanceToSoundSecondCharacter - 0f));
             Debug.Log("distance: " + distance);
             Debug.Log("distractionVolume: " + distractionVolume);
-            musicControlVolume = distractionVolume *
+            musicControlVolume = -distractionVolume *
                                  ((HighVolumeLimit + LowVolumeLimit) /
                                   (-LowVolumeLimit + HighVolumeLimitForDistraction));
             secondCharacterControlVolume = 0f;
