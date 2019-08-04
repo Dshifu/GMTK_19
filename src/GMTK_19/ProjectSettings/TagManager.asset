@@ -9,6 +9,7 @@ TagManager:
   - MovementBonus
   - Environment
   - PartForCharacter
+  - SecondCharacter
   layers:
   - Default
   - TransparentFX

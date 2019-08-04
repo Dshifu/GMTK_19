@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D), typeof(Rigidbody2D))]
 public class PanicEnvironmentEffectController : MonoBehaviour
 {
-    [Required] [SerializeField] private PanicLevel panicLevel = null;
+    [Required] public PanicLevel panicLevel = null;
 
     private void OnTriggerEnter2D(Collider2D other)
     {

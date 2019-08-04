@@ -16,7 +16,6 @@ public class LevelGenerator : MonoBehaviour
     [Required] public GameObject secondCharacter;
     [Required] public GameObject player;
     [Required] public GameObject baseObjectWithParts;
-    [Required] public GameObject[] secondCharacterPotentialPositions;
 
 
     private const int EnvironmentsCount = 2;
@@ -30,9 +29,6 @@ public class LevelGenerator : MonoBehaviour
         GenerateCurrentLevel();
         yield return new WaitForSeconds(0.1f);
         GenerateCharacters();
-
-        //Destroy(baseObjectWithParts);
-        DestroyArrayElements(secondCharacterPotentialPositions);
     }
 
     private void GenerateCharacters()
