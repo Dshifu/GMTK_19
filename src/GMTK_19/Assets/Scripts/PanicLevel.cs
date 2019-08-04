@@ -6,7 +6,8 @@ using UnityEngine;
 
 public class PanicLevel : MonoBehaviour
 {
-    private float timeForFullPanic = 60f;
+    private const float ValueTimeForFullPanic = 60f;
+    private float timeForFullPanic = ValueTimeForFullPanic;
     [SerializeField] private Transform panicLevelTransform = null; 
 
     private void Start()
@@ -52,4 +53,7 @@ public class PanicLevel : MonoBehaviour
     /// <returns></returns>
     public float GetPanicLevel
         => panicLevelTransform.localScale.x;
+
+    public bool IsFullPanicAtTheMoment =>
+        !(timeForFullPanic > ValueTimeForFullPanic);
 }

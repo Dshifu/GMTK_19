@@ -303,6 +303,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Shine
       objectReference: {fileID: 0}
+    - target: {fileID: 2629295450359173087, guid: 42e3565a48c66d649adea78ac26478e7,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629295450359173087, guid: 42e3565a48c66d649adea78ac26478e7,
+        type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42e3565a48c66d649adea78ac26478e7, type: 3}
 --- !u!4 &3075699606829040647 stripped
