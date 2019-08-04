@@ -48,7 +48,7 @@ public class MovementBonusEffectController : MonoBehaviour
             characterAnimator.SetBool(PrefsName.AnimatorState.Coka, false);
             characterAnimator.SetBool(PrefsName.AnimatorState.FireShit, false);
             characterAnimator.SetBool(PrefsName.AnimatorState.AK, false);
-            characterAnimator.SetBool(PrefsName.AnimatorState.Goroh, false);
+            characterAnimator.SetBool(PrefsName.AnimatorState.Beans, false);
             characterAnimator.SetBool(PrefsName.AnimatorState.Shampoo, false);
             return;
         }
