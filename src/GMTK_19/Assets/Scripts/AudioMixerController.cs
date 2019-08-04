@@ -9,7 +9,14 @@ public class AudioMixerController : MonoBehaviour
     [Required]
     [SerializeField] private PanicLevel panicLevel = null;
 
+    [SerializeField] private float distanceToSoundSecondCharacter = 50f;
+    [SerializeField] private float distanceToDistraction = 150f;
+
+    public Transform secondCharacter = null;
+    public Transform player = null;
+
     private const float HighVolumeLimit = 0f;
+    private const float HighVolumeLimitForDistraction = -30f;
     private const float LowVolumeLimit = -80f;
 
     private const float CoefForMultiply = 1280f;
@@ -27,57 +34,93 @@ public class AudioMixerController : MonoBehaviour
 
     private void Update()
     {
-        var panicLevelValue = panicLevel.GetPanicLevel;
+        SetMusicVolume();
+        SetSecondCharacterVolume();
+    }
+
+    private void SetSecondCharacterVolume()
+    {
+        if(secondCharacter == null || player == null)
+            return;
+        var distance = Vector3.Distance(player.position, secondCharacter.position); 
+//        if(distance > distanceToDistraction)
+//            return;
+        var distractionVolume = -80f;
+        var secondCharacterControlVolume = -80f;
+        var musicControlVolume = 0f;
+        if (distance < distanceToDistraction)
+        {
+            var coof = (LowVolumeLimit - HighVolumeLimitForDistraction) /
+                       (distanceToDistraction - distanceToSoundSecondCharacter);
+            var temp = distanceToSoundSecondCharacter * coof - HighVolumeLimitForDistraction;
+            distractionVolume = distance * coof - temp;
+        }
+
+        if (distance < distanceToSoundSecondCharacter)
+        {
+            distractionVolume = distance * (HighVolumeLimitForDistraction - LowVolumeLimit) / (distanceToSoundSecondCharacter - 0f) + LowVolumeLimit;
+            Debug.Log("coof1: " + (HighVolumeLimitForDistraction - LowVolumeLimit));
+            Debug.Log("coof2: " + (distanceToSoundSecondCharacter - 0f));
+            Debug.Log("distance: " + distance);
+            Debug.Log("distractionVolume: " + distractionVolume);
+            musicControlVolume = distractionVolume *
+                                 ((HighVolumeLimit + LowVolumeLimit) /
+                                  (-LowVolumeLimit + HighVolumeLimitForDistraction));
+            secondCharacterControlVolume = 0f;
+        }
         
-        var LowPanicVolume = -CoefForMultiply * Mathf.Pow(panicLevelValue, 2f);
+        audioMixer.SetFloat(PrefsName.DistractionVolume, distractionVolume);
+        audioMixer.SetFloat(PrefsName.MusicControlVolume, musicControlVolume);
+        audioMixer.SetFloat(PrefsName.SecondCharacterControlVolume, secondCharacterControlVolume);
+
+    }
+
+    private void SetMusicVolume()
+    {
+        var panicLevelValue = panicLevel.GetPanicLevel;
+
+        var lowPanicVolume = -CoefForMultiply * Mathf.Pow(panicLevelValue, 2f);
         if (panicLevelValue > 0f && panicLevelValue < MediumPanicLevel)
         {
-            audioMixer.SetFloat(PrefsName.LowPanicVolume, LowPanicVolume);
+            audioMixer.SetFloat(PrefsName.LowPanicVolume, lowPanicVolume);
         }
         else
         {
             audioMixer.SetFloat(PrefsName.LowPanicVolume, LowVolumeLimit);
         }
 
-//        if(panicLevelValue < 0.24f)
-//            audioMixer.SetFloat(PrefsName.MasterVolume, temp);
-        
-        var MediumPanicVolume = -CoefForMultiply * Mathf.Pow(panicLevelValue - (MediumPanicLevel + MediationPanicLevel), 2f);
+        var mediumPanicVolume =
+            -CoefForMultiply * Mathf.Pow(panicLevelValue - (MediumPanicLevel + MediationPanicLevel), 2f);
         if (panicLevelValue > MediumPanicLevel - MediationPanicLevel && panicLevelValue < HighPanicLevel)
         {
-            audioMixer.SetFloat(PrefsName.MediumPanicVolume, MediumPanicVolume);
+            audioMixer.SetFloat(PrefsName.MediumPanicVolume, mediumPanicVolume);
         }
         else
         {
             audioMixer.SetFloat(PrefsName.MediumPanicVolume, LowVolumeLimit);
         }
-        
-//        if(panicLevelValue > 0.24f && panicLevelValue < 0.73f)
-//            audioMixer.SetFloat(PrefsName.MasterVolume, temp);
 
-        var HighPanicVolume = -CoefForMultiply * Mathf.Pow(panicLevelValue - (HighPanicLevel + MediationPanicLevel), 2f);
+        var highPanicVolume = -CoefForMultiply * Mathf.Pow(panicLevelValue - (HighPanicLevel + MediationPanicLevel), 2f);
         if (panicLevelValue > HighPanicLevel - MediationPanicLevel)
         {
-            audioMixer.SetFloat(PrefsName.HighPanicVolume, HighPanicVolume);
+            audioMixer.SetFloat(PrefsName.HighPanicVolume, highPanicVolume);
         }
         else
         {
             audioMixer.SetFloat(PrefsName.HighPanicVolume, LowVolumeLimit);
         }
 
-        float masterVolumeLow = -80f;
-        float masterVolumeMedium = -80f;
-        float masterVolumeHigh = -80f;
-        if (LowPanicVolume < 0 && LowPanicVolume > -80)
-            masterVolumeLow = LowPanicVolume;
-        if (MediumPanicVolume < 0 && MediumPanicVolume > -80)
-            masterVolumeMedium = MediumPanicVolume;
-        if (HighPanicVolume < 0 && HighPanicVolume > -80)
-            masterVolumeHigh = HighPanicVolume;
+        var masterVolumeLow = -80f;
+        var masterVolumeMedium = -80f;
+        var masterVolumeHigh = -80f;
+        if (lowPanicVolume < 0 && lowPanicVolume > -80)
+            masterVolumeLow = lowPanicVolume;
+        if (mediumPanicVolume < 0 && mediumPanicVolume > -80)
+            masterVolumeMedium = mediumPanicVolume;
+        if (highPanicVolume < 0 && highPanicVolume > -80)
+            masterVolumeHigh = highPanicVolume;
 
         var temp = Mathf.Max(Mathf.Max(masterVolumeLow, masterVolumeMedium), masterVolumeHigh);
-        audioMixer.SetFloat(PrefsName.MasterVolume, -temp);
-//        if(panicLevelValue > 0.73f)
-//            audioMixer.SetFloat(PrefsName.MasterVolume, temp);
+        audioMixer.SetFloat(PrefsName.MusicVolume, -temp);
     }
 }
